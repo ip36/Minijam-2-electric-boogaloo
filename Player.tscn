@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://crg3q6ycx62qw"]
+[gd_scene load_steps=40 format=3 uid="uid://crg3q6ycx62qw"]
 
 [ext_resource type="Script" path="res://Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cn3f0d22njiw0" path="res://Player.png" id="2_r0pbu"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://dj1o07f1h04rb" path="res://Lasso.png" id="10_82jin"]
 [ext_resource type="Texture2D" uid="uid://cta4jhhmc4ug6" path="res://Potion_Morphing.png" id="11_icdod"]
 [ext_resource type="Texture2D" uid="uid://dxq8efigguify" path="res://Hit_frame.png" id="12_yxokx"]
+[ext_resource type="AudioStream" uid="uid://d2hhaw4h77xgm" path="res://Gun.wav" id="13_erq3b"]
+[ext_resource type="AudioStream" uid="uid://d4j7jkmb6771l" path="res://Hover.wav" id="14_tp3fn"]
+[ext_resource type="AudioStream" uid="uid://cebj5pqjvdse6" path="res://whip.wav" id="15_pymgl"]
+[ext_resource type="AudioStream" uid="uid://d1f8yyc0w0ypb" path="res://bounce.wav" id="16_2jxdj"]
+[ext_resource type="AudioStream" uid="uid://bvsf7cmrpgd4d" path="res://269303__kwahmah_02__swoosh34.wav" id="17_nt4fg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08edx"]
 atlas = ExtResource("2_r0pbu")
@@ -244,3 +249,19 @@ initial_velocity_max = 500.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(-1, -45)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_erq3b")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_tp3fn")
+volume_db = 2.052
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_pymgl")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_2jxdj")
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_nt4fg")
