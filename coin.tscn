@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddkx0v5dpnxc0"]
+[gd_scene load_steps=6 format=3 uid="uid://ddkx0v5dpnxc0"]
 
-[ext_resource type="Texture2D" uid="uid://dib7cnc4pting" path="res://coin.jpeg" id="1_2t38t"]
 [ext_resource type="Script" path="res://coin.gd" id="1_g6hyv"]
+[ext_resource type="Texture2D" uid="uid://bvps3he34r81d" path="res://Bottle.png" id="2_ssli2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bmf1"]
+atlas = ExtResource("2_ssli2")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6yfuf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2t38t")
+"texture": SubResource("AtlasTexture_3bmf1")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +27,8 @@ collision_mask = 3
 script = ExtResource("1_g6hyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.0900901, 0.0881057)
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1.125, 1.10022)
 sprite_frames = SubResource("SpriteFrames_6yfuf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -18,3 +18,7 @@ res://Player.gd
 res://verticalenemy.tscn
 res://Verticalenemy.gd
 res://Projectile.gd
+res://3.tscn
+res://5.tscn
+res://Spike.tscn
+res://Spike.gd

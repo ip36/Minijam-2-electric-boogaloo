@@ -28,6 +28,7 @@ var seperateupgradeslist = []
 var currentlooking
 var list = []
 var savedir = 1
+var shrunk = false
 
 func _ready():
 	seperateupgradeslist = Upgradesmanager.upgradeshave.duplicate()
@@ -48,6 +49,7 @@ func _ready():
 
 func get_horizontal_movement():
 	if nocontrols:
+		velocity.x = 0
 		return
 	var dir = 0
 	if Input.is_action_pressed("move_right"):
@@ -59,9 +61,11 @@ func get_horizontal_movement():
 		velocity.x = lerpf(velocity.x, dir * move_speed * move_speed_modifier, acceleration)
 		$AnimatedSprite2D.play()
 		savedir = dir
+		$AnimatedSprite2D.scale.x = abs($AnimatedSprite2D.scale.x)*dir
 	else:
 		velocity.x = lerpf(velocity.x, 0, friction)
-		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 4
+		$AnimatedSprite2D.pause()
 
 func can_jump():
 	if jumps == 1 and not is_on_floor():
@@ -117,14 +121,17 @@ func _physics_process(delta):
 		else:
 			hovertime += delta/2
 			$ProgressBar.value = hovertime
-	if Input.is_action_pressed("shrink") and Upgradesmanager.upgradeshave["Shrink"]:
-		$AnimatedSprite2D.scale.x = savedir 
-		$AnimatedSprite2D.scale.y = 1 
-		$CollisionShape2D.scale = Vector2(1, 1)
-	else:
-		$AnimatedSprite2D.scale.x = savedir * 2
-		$AnimatedSprite2D.scale.y = 2
-		$CollisionShape2D.scale = Vector2(2, 2)
+	if Input.is_action_just_pressed("shrink") and Upgradesmanager.upgradeshave["Shrink"] and not $RayCast2D.is_colliding():
+		if not shrunk:
+			$AnimatedSprite2D.scale.x = savedir 
+			$AnimatedSprite2D.scale.y = 1 
+			$CollisionShape2D.scale = Vector2(1, 1)
+			shrunk = true
+		else:
+			$AnimatedSprite2D.scale.x = savedir * 2
+			$AnimatedSprite2D.scale.y = 2
+			$CollisionShape2D.scale = Vector2(2, 2)
+			shrunk = false
 	if is_on_floor() and Upgradesmanager.upgradeshave["Double Jump"]:
 		jumps = 1
 	get_horizontal_movement()
@@ -161,7 +168,7 @@ func _physics_process(delta):
 			jump()
 
 func die(body, item):
-	if body == self:
+	if body == self and not nocontrols:
 		if armor:
 			armor = false
 			if position.x - item.position.x != abs(position.x - item.position.x):
@@ -172,6 +179,7 @@ func die(body, item):
 			movingtimer = 1.5
 			$AnimatedSprite2D.visible = false
 			$Sprite2D.visible = true
+			$CPUParticles2D2.emitting = true
 		else:
 			get_tree().call_deferred("reload_current_scene")
 
