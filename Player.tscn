@@ -193,7 +193,7 @@ theme = SubResource("Theme_empct")
 max_value = 1.0
 step = 0.001
 value = 1.0
-fill_mode = 2
+fill_mode = 3
 show_percentage = false
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

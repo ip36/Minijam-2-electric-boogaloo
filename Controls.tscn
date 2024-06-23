@@ -100,7 +100,7 @@ offset_right = 560.0
 offset_bottom = 224.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
-InputToRebind = "hook"
+InputToRebind = "lasso"
 
 [node name="KeybindButton6" type="Button" parent="."]
 layout_mode = 0

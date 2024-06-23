@@ -1,8 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxeqr2t6vwm6i"]
+[gd_scene load_steps=10 format=3 uid="uid://dxeqr2t6vwm6i"]
 
 [ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="1_2djsi"]
+[ext_resource type="Texture2D" uid="uid://b4y7e5x6i68a2" path="res://Cactuses.png" id="1_egqcw"]
 [ext_resource type="Script" path="res://Scenesenderbutton.gd" id="2_200mr"]
 [ext_resource type="FontFile" uid="uid://d546mlmj4mby" path="res://RioGrande.ttf" id="3_82v7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xap1f"]
+atlas = ExtResource("1_egqcw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erq5q"]
+atlas = ExtResource("1_egqcw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag3xd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xap1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erq5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Theme" id="Theme_xmtw2"]
 Label/colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
@@ -27,6 +50,17 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.878431, 0.423529, 0, 0.776471)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(130, 459)
+scale = Vector2(11.8125, 11.8125)
+sprite_frames = SubResource("SpriteFrames_ag3xd")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(976, 459)
+scale = Vector2(11.8125, 11.8125)
+sprite_frames = SubResource("SpriteFrames_ag3xd")
+frame = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
