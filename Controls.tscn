@@ -40,16 +40,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.878431, 0.423529, 0, 0.776471)
 
-[node name="KeybindButton1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 112.0
-offset_right = 144.0
-offset_bottom = 112.224
-theme = SubResource("Theme_dpm6v")
-script = ExtResource("2_2xd5j")
-InputToRebind = "jump"
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 466.0
@@ -62,11 +52,21 @@ script = ExtResource("3_8u5b0")
 sendto = "res://Start.tscn"
 overwrite = true
 
+[node name="KeybindButton1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 112.0
+offset_right = 206.0
+offset_bottom = 112.224
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "jump"
+
 [node name="KeybindButton2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 416.0
+offset_left = 478.0
 offset_top = 112.0
-offset_right = 424.0
+offset_right = 486.0
 offset_bottom = 120.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
@@ -74,9 +74,9 @@ InputToRebind = "move_right"
 
 [node name="KeybindButton3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 688.0
+offset_left = 750.0
 offset_top = 112.0
-offset_right = 696.0
+offset_right = 758.0
 offset_bottom = 120.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
@@ -84,9 +84,9 @@ InputToRebind = "move_left"
 
 [node name="KeybindButton4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 280.0
+offset_left = 342.0
 offset_top = 216.0
-offset_right = 288.0
+offset_right = 350.0
 offset_bottom = 224.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
@@ -94,9 +94,9 @@ InputToRebind = "shrink"
 
 [node name="KeybindButton5" type="Button" parent="."]
 layout_mode = 0
-offset_left = 552.0
+offset_left = 614.0
 offset_top = 216.0
-offset_right = 560.0
+offset_right = 622.0
 offset_bottom = 224.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
@@ -104,9 +104,9 @@ InputToRebind = "lasso"
 
 [node name="KeybindButton6" type="Button" parent="."]
 layout_mode = 0
-offset_left = 280.0
+offset_left = 342.0
 offset_top = 336.0
-offset_right = 288.0
+offset_right = 350.0
 offset_bottom = 344.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")
@@ -114,9 +114,9 @@ InputToRebind = "hover"
 
 [node name="KeybindButton7" type="Button" parent="."]
 layout_mode = 0
-offset_left = 552.0
+offset_left = 614.0
 offset_top = 336.0
-offset_right = 560.0
+offset_right = 622.0
 offset_bottom = 344.0
 theme = SubResource("Theme_dpm6v")
 script = ExtResource("2_2xd5j")

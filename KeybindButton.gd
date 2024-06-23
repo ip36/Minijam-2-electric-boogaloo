@@ -30,7 +30,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed and lookingforkey:
 		InputMap.action_erase_events(InputToRebind)
 		InputMap.action_add_event(InputToRebind, event)
-		text =  InputToRebind + ":
+		text =  InputToRebind + " set as
 			" + str(event.as_text())
 		resettimer = resettimermax
 		lookingforkey = false

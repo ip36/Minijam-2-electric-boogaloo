@@ -24,8 +24,9 @@ func _process(delta):
 		newprojectile.get_child(0).set_deferred("disabled", false)
 		newprojectile.player = get_parent()
 		newprojectile.dir = get_parent().lookingdirection
+		newprojectile.get_node("Sprite2D").scale.x = newprojectile.dir
 		shootcooldown = shootcooldownmax
-	if Input.is_action_pressed("hook") and shootcooldown <= 0 and Upgradesmanager.upgradeshave["Grappling hook"]:
+	if Input.is_action_pressed("lasso") and shootcooldown <= 0 and Upgradesmanager.upgradeshave["Grappling hook"]:
 		var projectile = load("res://Grapple.tscn")
 		var newprojectile = projectile.instantiate()
 		get_parent().get_parent().add_child(newprojectile)
@@ -34,4 +35,5 @@ func _process(delta):
 		newprojectile.get_child(0).set_deferred("disabled", false)
 		newprojectile.player = get_parent()
 		newprojectile.dir = get_parent().lookingdirection
+		newprojectile.get_node("Sprite2D").scale.x = newprojectile.dir
 		shootcooldown = shootcooldownmax

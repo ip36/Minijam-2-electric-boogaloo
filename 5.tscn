@@ -14,8 +14,8 @@
 script = ExtResource("1_yb1o3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1180.21, 544)
-scale = Vector2(3.76881, 4.33333)
+position = Vector2(1161.66, 560)
+scale = Vector2(3.65285, 4.2)
 texture = ExtResource("2_awmek")
 
 [node name="TileMap" type="TileMap" parent="."]

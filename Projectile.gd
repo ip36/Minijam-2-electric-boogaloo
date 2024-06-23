@@ -21,6 +21,11 @@ func hitsomething(area):
 		if get_parent().enemiesalive <= 0:
 			get_tree().call_deferred("change_scene_to_file", "res://" + str(int(str(get_tree().current_scene.name)) + 1) + ".tscn")
 		area.queue_free()
+		var projectile = load("res://Enemydeath.tscn")
+		var newprojectile = projectile.instantiate()
+		get_parent().add_child(newprojectile)
+		newprojectile.global_position = area.global_position
+		newprojectile.emitting = true
 		self.queue_free()
 
 
