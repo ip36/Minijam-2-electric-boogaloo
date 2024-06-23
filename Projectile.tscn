@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0qfyhfgn63ys"]
+[gd_scene load_steps=4 format=3 uid="uid://c0qfyhfgn63ys"]
 
 [ext_resource type="Script" path="res://Projectile.gd" id="1_86u81"]
+[ext_resource type="Texture2D" uid="uid://6hig7x6wfhv6" path="res://Bullet shoot.png" id="2_ir78e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3l427"]
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_86u81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3l427")
 disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ir78e")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://blqii81msscjq"]
+
+[ext_resource type="Script" path="res://Grapple.gd" id="1_xtl8w"]
+[ext_resource type="Texture2D" uid="uid://dj1o07f1h04rb" path="res://Lasso.png" id="2_bsgvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3l427"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_xtl8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3l427")
+disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_bsgvn")
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(0, 10)
+points = PackedVector2Array(42, 49, 0, 0)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 10)
+points = PackedVector2Array(42, 49, 0, 0)
+width = 2.0
+default_color = Color(1, 0.87451, 0.392157, 1)

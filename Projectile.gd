@@ -1,6 +1,6 @@
 extends Area2D
 var moving = false
-const speed = 2000
+const speed = 1000
 var next_collision
 var player
 var fromplayer
@@ -17,10 +17,13 @@ func _process(delta):
 
 func hitsomething(area):
 	if area.is_in_group("enemies"):
+		get_parent().enemiesalive -= 1
+		if get_parent().enemiesalive <= 0:
+			get_tree().call_deferred("change_scene_to_file", "res://" + str(int(str(get_tree().current_scene.name)) + 1) + ".tscn")
 		area.queue_free()
 		self.queue_free()
 
 
 func hitwall(body):
-	if body != get_parent() and not body.is_in_group("coin"):
+	if body != get_parent().get_node("Player") and not body.is_in_group("coin"):
 		self.queue_free()

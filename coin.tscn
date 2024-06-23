@@ -18,6 +18,8 @@ animations = [{
 radius = 9.05539
 
 [node name="Coin" type="Area2D" groups=["coin"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_g6hyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

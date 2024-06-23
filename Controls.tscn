@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0r1hyg7kt7pa"]
+
+[ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="1_6epfo"]
+[ext_resource type="FontFile" uid="uid://d546mlmj4mby" path="res://RioGrande.ttf" id="1_y5nou"]
+[ext_resource type="Script" path="res://KeybindButton.gd" id="2_2xd5j"]
+[ext_resource type="Script" path="res://Scenesenderbutton.gd" id="3_8u5b0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddjg0"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yml5e"]
+bg_color = Color(0.235294, 0.117647, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2r3i"]
+bg_color = Color(0.721569, 0.309804, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qed38"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_dpm6v"]
+Button/colors/font_color = Color(0.305882, 0.160784, 0, 1)
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_y5nou")
+Button/styles/focus = SubResource("StyleBoxFlat_ddjg0")
+Button/styles/hover = SubResource("StyleBoxFlat_yml5e")
+Button/styles/normal = SubResource("StyleBoxFlat_n2r3i")
+Button/styles/pressed = SubResource("StyleBoxFlat_qed38")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.878431, 0.423529, 0, 0.776471)
+
+[node name="KeybindButton1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 144.0
+offset_bottom = 112.224
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "jump"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 504.0
+offset_right = 688.0
+offset_bottom = 599.0
+theme = ExtResource("1_6epfo")
+text = "Back"
+script = ExtResource("3_8u5b0")
+sendto = "res://Start.tscn"
+overwrite = true
+
+[node name="KeybindButton2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 112.0
+offset_right = 424.0
+offset_bottom = 120.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "move_right"
+
+[node name="KeybindButton3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 112.0
+offset_right = 696.0
+offset_bottom = 120.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "move_left"
+
+[node name="KeybindButton4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 216.0
+offset_right = 288.0
+offset_bottom = 224.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "shrink"
+
+[node name="KeybindButton5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 216.0
+offset_right = 560.0
+offset_bottom = 224.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "hook"
+
+[node name="KeybindButton6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 336.0
+offset_right = 288.0
+offset_bottom = 344.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "hover"
+
+[node name="KeybindButton7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 336.0
+offset_right = 560.0
+offset_bottom = 344.0
+theme = SubResource("Theme_dpm6v")
+script = ExtResource("2_2xd5j")
+InputToRebind = "gun"

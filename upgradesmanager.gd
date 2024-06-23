@@ -6,10 +6,10 @@ var upgradeshave = {
 	"Armor" : false,
 	"Double Jump" : false,
 	"Hover" : false,
-	"Flip gravity" : false,
 	"Grappling hook" : false,
-	"Transform orb" : false,
+	"Shrink" : false,
 }
+var camefromitems = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

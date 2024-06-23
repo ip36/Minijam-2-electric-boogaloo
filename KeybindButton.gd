@@ -10,8 +10,6 @@ func _ready():
 	connect("button_down", igotpressed)
 
 func _process(delta):
-	if Input.is_action_just_pressed("Example Input"):
-		print("you pressed the exaple input! Good job.")
 	if resettimer <= 0 and not lookingforkey:
 		text = "Change keybind: 
 			" + InputToRebind
@@ -20,8 +18,8 @@ func _process(delta):
 
 func igotpressed():
 	if not lookingforkey:
-		text = "Press the key you want to assign.
-			Click again to cancel"
+		text = "Press any
+		key"
 		lookingforkey = true
 	else:
 		text = "Change keybind: 
@@ -32,7 +30,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed and lookingforkey:
 		InputMap.action_erase_events(InputToRebind)
 		InputMap.action_add_event(InputToRebind, event)
-		text =  InputToRebind + " set to: 
+		text =  InputToRebind + ":
 			" + str(event.as_text())
 		resettimer = resettimermax
 		lookingforkey = false

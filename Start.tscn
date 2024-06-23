@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxeqr2t6vwm6i"]
+[gd_scene load_steps=6 format=3 uid="uid://dxeqr2t6vwm6i"]
 
 [ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="1_2djsi"]
 [ext_resource type="Script" path="res://Scenesenderbutton.gd" id="2_200mr"]
+[ext_resource type="FontFile" uid="uid://d546mlmj4mby" path="res://RioGrande.ttf" id="3_82v7o"]
 
 [sub_resource type="Theme" id="Theme_xmtw2"]
 Label/colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
+Label/font_sizes/font_size = 90
+Label/fonts/font = ExtResource("3_82v7o")
+
+[sub_resource type="Theme" id="Theme_lr35b"]
+Label/colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("3_82v7o")
 
 [node name="Controlmain" type="Control"]
 layout_mode = 3
@@ -18,35 +26,48 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+color = Color(0.878431, 0.423529, 0, 0.776471)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 280.0
-offset_right = 623.0
-offset_bottom = 383.0
+offset_left = 416.0
+offset_top = 316.0
+offset_right = 700.0
+offset_bottom = 419.0
 theme = ExtResource("1_2djsi")
 text = "Start"
 script = ExtResource("2_200mr")
-sendto = "res://Levelselect.tscn"
+sendto = "res://Itemselectr.tscn"
 overwrite = true
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 392.0
-offset_top = 472.0
-offset_right = 679.0
-offset_bottom = 575.0
+offset_left = 379.0
+offset_top = 470.0
+offset_right = 739.0
+offset_bottom = 573.0
 theme = ExtResource("1_2djsi")
 text = "Options"
 script = ExtResource("2_200mr")
-sendto = "res://Options.tscn"
+sendto = "res://Controls.tscn"
+overwrite = true
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(0.729412, 0.329412, 0, 1)
 layout_mode = 0
-offset_left = 416.0
-offset_top = 128.0
-offset_right = 649.0
-offset_bottom = 151.0
+offset_left = 266.0
+offset_top = 169.0
+offset_right = 868.0
+offset_bottom = 264.0
 theme = SubResource("Theme_xmtw2")
-text = "This is the name of your game"
+text = "Bullet Prices"
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0.729412, 0.329412, 0, 1)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 78.0
+offset_right = 821.0
+offset_bottom = 132.0
+theme = SubResource("Theme_lr35b")
+text = "due to increased"

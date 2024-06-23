@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://uio0xveqcoad"]
+
+[ext_resource type="Script" path="res://Autobuttonmaker.gd" id="1_lo4yq"]
+[ext_resource type="Script" path="res://Equipbutton.gd" id="2_3cbbf"]
+[ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="2_tkxjl"]
+[ext_resource type="FontFile" uid="uid://d546mlmj4mby" path="res://RioGrande.ttf" id="4_61pon"]
+[ext_resource type="Script" path="res://Scenesenderbutton.gd" id="4_prm4o"]
+[ext_resource type="Script" path="res://WarningLabel.gd" id="5_h22ln"]
+
+[sub_resource type="Theme" id="Theme_6v2j7"]
+Label/colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("4_61pon")
+
+[sub_resource type="Theme" id="Theme_hift5"]
+Label/colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("4_61pon")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.878431, 0.423529, 0, 0.776471)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." node_paths=PackedStringArray("buttontemplate")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 2
+script = ExtResource("1_lo4yq")
+lvlcount = 8
+buttontemplate = NodePath("../Button")
+giveimages = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+offset_left = 824.0
+offset_top = 336.0
+offset_right = 974.0
+offset_bottom = 486.0
+theme = ExtResource("2_tkxjl")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_3cbbf")
+
+[node name="Label" type="Label" parent="Button"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 200.0
+offset_right = 576.0
+offset_bottom = 152.0
+theme = SubResource("Theme_6v2j7")
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 408.0
+offset_right = 1009.0
+offset_bottom = 511.0
+theme = ExtResource("2_tkxjl")
+text = "Start!"
+script = ExtResource("4_prm4o")
+sendto = "res://Levelselect.tscn"
+overwrite = true
+upgradescene = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 528.0
+offset_right = 1081.0
+offset_bottom = 631.0
+theme = ExtResource("2_tkxjl")
+text = "Controls"
+script = ExtResource("4_prm4o")
+sendto = "res://Levelselect.tscn"
+upgradescene = true
+notefromitems = true
+
+[node name="Label" type="Label" parent="Button3"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+layout_mode = 0
+offset_left = 8.0
+offset_top = -512.0
+offset_right = 410.0
+offset_bottom = -458.0
+theme = SubResource("Theme_hift5")
+text = "Select upgrades"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 648.0
+offset_top = 380.0
+offset_right = 893.0
+offset_bottom = 403.0
+text = "<- Please select three upgrades!"
+script = ExtResource("5_h22ln")

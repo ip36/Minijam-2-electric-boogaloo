@@ -1,14 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfjpimg5ehcjt"]
+[gd_scene load_steps=10 format=3 uid="uid://bfjpimg5ehcjt"]
 
 [ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="1_81mm4"]
+[ext_resource type="FontFile" uid="uid://d546mlmj4mby" path="res://RioGrande.ttf" id="1_rxmo6"]
 [ext_resource type="Script" path="res://Scenesenderbutton.gd" id="2_6bs53"]
 [ext_resource type="Script" path="res://Autobuttonmaker.gd" id="3_riyqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tu3x"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6t31"]
+bg_color = Color(0.219608, 0.109804, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfwve"]
+bg_color = Color(0.721569, 0.309804, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4k61"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_h5qks"]
+Button/colors/font_color = Color(0.305882, 0.160784, 0, 1)
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("1_rxmo6")
+Button/styles/focus = SubResource("StyleBoxFlat_1tu3x")
+Button/styles/hover = SubResource("StyleBoxFlat_i6t31")
+Button/styles/normal = SubResource("StyleBoxFlat_wfwve")
+Button/styles/pressed = SubResource("StyleBoxFlat_j4k61")
 
 [node name="Control" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+color = Color(0.878431, 0.423529, 0, 0.776471)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -17,12 +40,12 @@ offset_left = -64.0
 offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 96.0
-theme = ExtResource("1_81mm4")
+theme = SubResource("Theme_h5qks")
 text = "1"
 script = ExtResource("2_6bs53")
 sendto = "res://Title.tscn"
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." node_paths=PackedStringArray("buttontemplate")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,19 +57,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("3_riyqd")
+buttontemplate = NodePath("../Button")
 
-[node name="GridContainer" type="GridContainer" parent="CenterContainer" node_paths=PackedStringArray("buttontemplate")]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
 layout_mode = 2
 columns = 3
-script = ExtResource("3_riyqd")
-buttontemplate = NodePath("../../Button")
 
 [node name="Button2" type="Button" parent="."]
 custom_minimum_size = Vector2(128, 128)
-offset_right = 240.0
+offset_left = 1.0
+offset_right = 305.0
 offset_bottom = 128.0
 theme = ExtResource("1_81mm4")
-text = " Back"
+text = "Back"
 script = ExtResource("2_6bs53")
 sendto = "res://Start.tscn"
 overwrite = true

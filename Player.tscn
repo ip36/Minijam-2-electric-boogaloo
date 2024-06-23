@@ -1,43 +1,233 @@
-[gd_scene load_steps=7 format=3 uid="uid://crg3q6ycx62qw"]
+[gd_scene load_steps=35 format=3 uid="uid://crg3q6ycx62qw"]
 
-[ext_resource type="Texture2D" uid="uid://fbte8xyykhcg" path="res://Mario.png" id="1"]
 [ext_resource type="Script" path="res://Player.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cn3f0d22njiw0" path="res://Player.png" id="2_r0pbu"]
 [ext_resource type="Script" path="res://gun.gd" id="3_6lk8v"]
+[ext_resource type="Texture2D" uid="uid://cdo722xvbtlhf" path="res://Gun.png" id="4_7jbm7"]
+[ext_resource type="Texture2D" uid="uid://b1m4mb3nmbjma" path="res://Ammo.png" id="5_8m55j"]
+[ext_resource type="Texture2D" uid="uid://bpxssik2dxjmv" path="res://Boots.png" id="6_ckajn"]
+[ext_resource type="Texture2D" uid="uid://bxisfvq8i7y6c" path="res://Armor.png" id="7_l7c3w"]
+[ext_resource type="Texture2D" uid="uid://d3to5s60v6a4t" path="res://Potion_Double_Jumping.png" id="8_f4ebm"]
+[ext_resource type="Texture2D" uid="uid://bcdyaov11y38f" path="res://Hovercraft.png" id="9_jvbxr"]
+[ext_resource type="Texture2D" uid="uid://dj1o07f1h04rb" path="res://Lasso.png" id="10_82jin"]
+[ext_resource type="Texture2D" uid="uid://cta4jhhmc4ug6" path="res://Potion_Morphing.png" id="11_icdod"]
+[ext_resource type="Texture2D" uid="uid://dxq8efigguify" path="res://Hit_frame.png" id="12_yxokx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08edx"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wdb8"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdkdj"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_runu4"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwamg"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pm81"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kka0y"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5aog"]
+atlas = ExtResource("2_r0pbu")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1")
+"texture": SubResource("AtlasTexture_08edx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wdb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdkdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_runu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwamg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pm81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kka0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5aog")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(28, 29)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah7ef"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o7av"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_empct"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ah7ef")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_7o7av")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjxmn"]
+atlas = ExtResource("4_7jbm7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6srb"]
+atlas = ExtResource("5_8m55j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1y8a"]
+atlas = ExtResource("6_ckajn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af25v"]
+atlas = ExtResource("7_l7c3w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qydpa"]
+atlas = ExtResource("8_f4ebm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj8vs"]
+atlas = ExtResource("9_jvbxr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7b4v"]
+atlas = ExtResource("10_82jin")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeobg"]
+atlas = ExtResource("11_icdod")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vetwl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6srb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1y8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af25v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qydpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj8vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7b4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeobg")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(28, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul71o"]
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(1, 1)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.499999, 4.50004)
-scale = Vector2(0.164, 0.10705)
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, -1.5)
+scale = Vector2(2, 2)
 shape = SubResource("2")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(14, -1)
+visible = false
+position = Vector2(28, -1)
+scale = Vector2(2, 2)
 script = ExtResource("3_6lk8v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
-shape = SubResource("RectangleShape2D_ul71o")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(-1, 1)
+texture = ExtResource("4_7jbm7")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 28.0
+offset_top = -38.0
+offset_right = 32.0
+offset_bottom = 18.0
+rotation = 1.5708
+theme = SubResource("Theme_empct")
+max_value = 1.0
+step = 0.001
+value = 1.0
+fill_mode = 2
+show_percentage = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 0.25098, 0, 1)
+position = Vector2(-1, 25)
+emitting = false
+amount = 35
+emission_shape = 3
+emission_rect_extents = Vector2(15, 1)
+direction = Vector2(0, 1)
+spread = 85.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-44, -50)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vetwl")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -61)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vetwl")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(44, -50)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vetwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.999999, -0.999999)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("12_yxokx")
