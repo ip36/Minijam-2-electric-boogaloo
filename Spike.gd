@@ -12,4 +12,4 @@ func _process(delta):
 
 func ouch(body):
 	if body == get_parent().get_parent().get_node("Player"):
-		get_parent().get_node("Player").die(body, self)
+		get_parent().get_parent().get_node("Player").die(body, self)

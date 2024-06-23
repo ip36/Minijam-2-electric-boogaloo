@@ -78,7 +78,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(28, 29)
+size = Vector2(22.5, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah7ef"]
 bg_color = Color(0, 0, 0, 1)
@@ -166,7 +166,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(-1.5, -1.5)
 scale = Vector2(2, 2)
 shape = SubResource("2")
 

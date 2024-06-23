@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bykaax24j743y"]
+
+[ext_resource type="Theme" uid="uid://buy27cde4xixp" path="res://Buttons.tres" id="1_ge8us"]
+[ext_resource type="Script" path="res://Scenesenderbutton.gd" id="2_4y71q"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_right = 716.0
+offset_bottom = 95.0
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_ge8us")
+text = "Return to Menu"
+script = ExtResource("2_4y71q")
+sendto = "res://Start.tscn"
+overwrite = true

@@ -65,6 +65,16 @@ func _ready():
 		if inputmap:
 			tmpbutt.InputToRebind = controls[i]
 		if giveimages:
+			Upgradesmanager.upgradeshave = {
+	"Gun" : false,
+	"Ammunition" : false,
+	"Stomping boots" : false,
+	"Armor" : false,
+	"Double Jump" : false,
+	"Hover" : false,
+	"Grappling hook" : false,
+	"Shrink" : false,
+}
 			tmpbutt.icon = load(images[i])
 			tmpbutt.get_node("Label").text = tooltips[i]
 			tmpbutt.myupgrade = upgrades[i]

@@ -151,9 +151,9 @@ func _physics_process(delta):
 	set_velocity(velocity)
 	set_up_direction(Vector2.UP)
 	set_floor_stop_on_slope_enabled(true)
-	if Input.is_action_pressed("hover") and hovertime > 0 and Upgradesmanager.upgradeshave["Hover"] and not is_on_floor():
+	if Input.is_action_pressed("hover") and hovertime > 0 and Upgradesmanager.upgradeshave["Hover"] and not is_on_floor() and not nocontrols:
 		$CPUParticles2D.emitting = true
-		velocity.y = 0
+		velocity.y = -50
 		hovertime -= delta
 		$ProgressBar.value = hovertime
 	if Input.is_action_just_released("hover"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddkx0v5dpnxc0"]
+[gd_scene load_steps=5 format=3 uid="uid://ddkx0v5dpnxc0"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_g6hyv"]
 [ext_resource type="Texture2D" uid="uid://bvps3he34r81d" path="res://Bottle.png" id="2_ssli2"]
@@ -18,18 +18,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_chdbv"]
-radius = 9.05539
-
 [node name="Coin" type="Area2D" groups=["coin"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_g6hyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(1.125, 1.10022)
+position = Vector2(-1.43051e-06, 0)
+scale = Vector2(2.125, 2.07819)
 sprite_frames = SubResource("SpriteFrames_6yfuf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_chdbv")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -14, -4, -3, -8, 1, -8, 12, -5, 14, 6, 14, 8, 12, 8, 1, 4, -3, 4, -14)

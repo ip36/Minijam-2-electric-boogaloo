@@ -29,6 +29,7 @@ func _process(delta):
 			newprojectile.get_child(0).set_deferred("disabled", false)
 			newprojectile.player = get_parent().get_node("Player")
 			newprojectile.dir = $Node2D.scale.x * -1
+			newprojectile.get_child(1).scale.x = newprojectile.dir
 			newprojectile.add_to_group("killontouch")
 	if $RayCast2D.is_colliding():
 		velocity *= -1

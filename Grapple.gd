@@ -20,7 +20,6 @@ func _process(delta):
 	$RayCast2D.target_position = to_local(player.global_position)
 	$Line2D.points[0] = to_local(player.global_position)
 	$Line2D2.points[0] = to_local(player.global_position)
-	$Sprite2D.look_at(to_local(player.global_position))
 	if firstframe:
 		startposition = position
 	position += transform.x * speed * delta * dir

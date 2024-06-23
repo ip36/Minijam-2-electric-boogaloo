@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwagvr8m7ec3r"]
+[gd_scene load_steps=9 format=3 uid="uid://cwagvr8m7ec3r"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8se04"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_7j06e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://20cvbb2egamp" path="res://verticalenemy.tscn" id="5_7nvjv"]
 [ext_resource type="Texture2D" uid="uid://cdo722xvbtlhf" path="res://Gun.png" id="6_cty7j"]
 [ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="7_e4kr0"]
+[ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="8_7rn1w"]
 
 [node name="3" type="Node"]
 script = ExtResource("1_8se04")
@@ -63,3 +64,5 @@ texture = ExtResource("6_cty7j")
 
 [node name="Coin" parent="." instance=ExtResource("7_e4kr0")]
 position = Vector2(1040, 528)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_7rn1w")]

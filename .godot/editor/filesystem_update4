@@ -22,3 +22,5 @@ res://3.tscn
 res://5.tscn
 res://Spike.tscn
 res://Spike.gd
+res://UI.tscn
+res://Autobuttonmaker.gd

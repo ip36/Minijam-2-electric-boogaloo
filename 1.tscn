@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=8 format=3 uid="uid://cwq13yg300t1c"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_dmdx0"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_vt3ni"]
 [ext_resource type="TileSet" uid="uid://drgy2dwrxp8sq" path="res://level.tres" id="3_dl233"]
 [ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="4_mxd85"]
 [ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="6_hvly0"]
+[ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="7_nmb0s"]
 [ext_resource type="PackedScene" uid="uid://20cvbb2egamp" path="res://verticalenemy.tscn" id="7_tk7af"]
 
 [node name="1" type="Node"]
@@ -49,3 +50,5 @@ position = Vector2(620, 404)
 
 [node name="Coin" parent="." instance=ExtResource("4_mxd85")]
 position = Vector2(220, 252)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_nmb0s")]
