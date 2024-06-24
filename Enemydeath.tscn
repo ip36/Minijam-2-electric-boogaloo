@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtt2v2msvmhf3"]
 
-[ext_resource type="AudioStream" uid="uid://dhakul8wgfi6f" path="res://mortality.wav" id="1_7sm58"]
+[ext_resource type="AudioStream" path="res://mortality.wav" id="1_7sm58"]
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 emitting = false
