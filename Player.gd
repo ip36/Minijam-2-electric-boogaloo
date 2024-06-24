@@ -156,8 +156,11 @@ func _physics_process(delta):
 		velocity.y = -50
 		hovertime -= delta
 		$ProgressBar.value = hovertime
+		if not $AudioStreamPlayer2.playing:
+			$AudioStreamPlayer2.play(2)
 	if Input.is_action_just_released("hover"):
 		$CPUParticles2D.emitting = false
+		$AudioStreamPlayer2.stop()
 	if not grappling:
 		move_and_slide()
 	velocity = velocity
@@ -180,6 +183,7 @@ func die(body, item):
 			$AnimatedSprite2D.visible = false
 			$Sprite2D.visible = true
 			$CPUParticles2D2.emitting = true
+			$AudioStreamPlayer5.play()
 		else:
 			get_tree().call_deferred("reload_current_scene")
 

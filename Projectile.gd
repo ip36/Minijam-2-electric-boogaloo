@@ -26,6 +26,7 @@ func hitsomething(area):
 		get_parent().add_child(newprojectile)
 		newprojectile.global_position = area.global_position
 		newprojectile.emitting = true
+		newprojectile.get_child(0).play()
 		self.queue_free()
 
 

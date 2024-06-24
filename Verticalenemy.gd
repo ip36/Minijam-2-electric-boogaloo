@@ -21,6 +21,7 @@ func _process(delta):
 			shoottimer -= delta
 		else:
 			shoottimer = 1
+			$AudioStreamPlayer.play()
 			var projectile = load("res://Projectile.tscn")
 			var newprojectile = projectile.instantiate()
 			get_parent().add_child(newprojectile)
@@ -38,6 +39,7 @@ func _process(delta):
 
 func stomped(body):
 	if body == player and Upgradesmanager.upgradeshave["Stomping boots"]:
+		body.get_node("AudioStreamPlayer4").play()
 		$CollisionShape2D.set_deferred("disabled", true)
 		player.jump()
 		get_parent().enemiesalive -= 1

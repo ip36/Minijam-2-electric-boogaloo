@@ -21,27 +21,27 @@ or the stomping boots to kill all
 the enemies.",
 "You need these to use the gun.",
 "Jump on an enemy's head to kill it.",
-"Armor allows you to survive one
-hit from an enemy. It only works
-once and recharges between
-levels or after dying.",
-"Two jumps are better than one.
-Get up higher ledges and cross
-gaps. NOTE: YOU NEED AT LEAST
+"This hat allows you to survive
+one hit from an enemy. It only
+works once and recharges
+between levels or after dying.",
+"Jump an additional time in the.
+air by pressing the jump key
+again. NOTE that YOU NEED AT LEAST
 ONE MOVEMENT UPGRADE TO GET TO
 THE GOAL IN EACH LEVEL.",
-"Gravity is for suckers. Move around
-in the air for a short time without
-falling to easily cross gaps.",
-"Who doesn't like grappling hooks?
-Allows you to quickly travel a short
-distance by pulling yourself.",
-"This copyright-neutral potion allows
-you to turn into a smaller version
-of you to move through small gaps,
-leading to more challenging areas.
-For skilled players only. Has no
-practical use for completing levels."]
+"Gravity is for suckers. Propel
+yourself upward while in the air.
+has limited fuel.",
+"Allows you to quickly travel a short
+distance by pulling yourself. You gain
+some height at the end of your grapple,
+allowing you to scale walls with it.",
+"allows you to turn into a smaller
+version of you to move through small
+gaps which lead to more challenging
+areas. For skilled players only. Has
+no practical use for completing levels."]
 var upgrades = [
 	"Gun",
 	"Ammunition",
