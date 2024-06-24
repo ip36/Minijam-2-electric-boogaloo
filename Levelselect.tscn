@@ -58,6 +58,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("3_riyqd")
+lvlcount = 7
 buttontemplate = NodePath("../Button")
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer"]
