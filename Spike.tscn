@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://o5nyhstagafj"]
+[gd_scene load_steps=4 format=3 uid="uid://o5nyhstagafj"]
 
 [ext_resource type="Script" path="res://Spike.gd" id="1_kuwo4"]
 [ext_resource type="Texture2D" uid="uid://d3r3ad6vhnnnd" path="res://Spike.png" id="1_we15i"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyipj"]
+size = Vector2(4, 7)
+
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_kuwo4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, -8, -8, 8, 8, 8)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_we15i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_nyipj")

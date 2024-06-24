@@ -15,9 +15,6 @@ res://3.tscn
 res://5.tscn
 res://Spike.tscn
 res://UI.tscn
-res://KeybindButton.gd
-res://gun.gd
-res://Projectile.gd
 res://Enemydeath.tscn
-res://Main.gd
 res://7.tscn
+res://4.tscn
