@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwagvr8m7ec3r"]
+[gd_scene load_steps=15 format=3 uid="uid://cwagvr8m7ec3r"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8se04"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_7j06e"]
@@ -8,6 +8,43 @@
 [ext_resource type="Texture2D" uid="uid://cdo722xvbtlhf" path="res://Gun.png" id="6_cty7j"]
 [ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="7_e4kr0"]
 [ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="8_7rn1w"]
+[ext_resource type="Texture2D" uid="uid://car5w53pb7aug" path="res://Background.png" id="9_yl1rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti4jd"]
+atlas = ExtResource("9_yl1rt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vju50"]
+atlas = ExtResource("9_yl1rt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8073b"]
+atlas = ExtResource("9_yl1rt")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v17o"]
+atlas = ExtResource("9_yl1rt")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0q86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vju50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8073b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v17o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="3" type="Node"]
 script = ExtResource("1_8se04")
@@ -27,8 +64,31 @@ tile_set = ExtResource("3_47k7g")
 format = 2
 layer_0/tile_data = PackedInt32Array(1638453, 1, 0, 1638452, 1, 0, 1638451, 1, 0, 1179701, 1, 0, 1179700, 1, 0, 1179699, 1, 0, 1507367, 1, 0, 1507366, 1, 0, 1507365, 1, 0, 1572903, 1, 0, 1572902, 1, 0, 1572901, 1, 0, 1835056, 1, 0, 1835055, 1, 0, 1835054, 1, 0, 1179680, 1, 0, 1114144, 1, 0, 1245216, 1, 0)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(928, 1032)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_j0q86")
+frame = 2
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1232, 704)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_j0q86")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1680, 544)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_j0q86")
+frame = 3
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1304, 1024)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_j0q86")
+frame = 1
+
 [node name="Player" parent="." instance=ExtResource("4_8qti1")]
-position = Vector2(936, 968)
+position = Vector2(1072, 1016)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-577, -159)

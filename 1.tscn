@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=14 format=3 uid="uid://cwq13yg300t1c"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_dmdx0"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_vt3ni"]
@@ -7,6 +7,43 @@
 [ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="6_hvly0"]
 [ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="7_nmb0s"]
 [ext_resource type="PackedScene" uid="uid://20cvbb2egamp" path="res://verticalenemy.tscn" id="7_tk7af"]
+[ext_resource type="Texture2D" uid="uid://car5w53pb7aug" path="res://Background.png" id="8_kgule"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti4jd"]
+atlas = ExtResource("8_kgule")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vju50"]
+atlas = ExtResource("8_kgule")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8073b"]
+atlas = ExtResource("8_kgule")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v17o"]
+atlas = ExtResource("8_kgule")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6vul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vju50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8073b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v17o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="1" type="Node"]
 script = ExtResource("1_dmdx0")
@@ -27,6 +64,28 @@ position = Vector2(-400, -336)
 tile_set = ExtResource("3_dl233")
 format = 2
 layer_0/tile_data = PackedInt32Array(1835030, 1, 0, 1835029, 1, 0, 1835028, 1, 0, 1835027, 1, 0, 1835026, 1, 0, 1835025, 1, 0, 1835024, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 983071, 1, 0, 983072, 1, 0, 1572896, 1, 0, 1572897, 1, 0, 1572898, 1, 0, 1572899, 1, 0, 1572900, 1, 0, 1572895, 1, 0, 1638431, 1, 0, 1638432, 1, 0, 1638433, 1, 0, 1638434, 1, 0, 1638435, 1, 0, 1638436, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1310741, 1, 0, 1310740, 1, 0, 1310739, 1, 0, 1310738, 1, 0, 1310737, 1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(144, 528)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d6vul")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(976, 688)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d6vul")
+frame = 3
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 240)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d6vul")
+frame = 1
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(672, 688)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d6vul")
 
 [node name="Player" parent="." instance=ExtResource("6_hvly0")]
 position = Vector2(512, 584)
