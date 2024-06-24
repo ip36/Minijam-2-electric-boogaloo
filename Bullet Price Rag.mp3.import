@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k8f0dg5t6mwl"
+path="res://.godot/imported/Bullet Price Rag.mp3-5b850b90b85b9d690f6a906dfbc8cac0.mp3str"
+
+[deps]
+
+source_file="res://Bullet Price Rag.mp3"
+dest_files=["res://.godot/imported/Bullet Price Rag.mp3-5b850b90b85b9d690f6a906dfbc8cac0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

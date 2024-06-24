@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://vmtlftmndmcw"]
+[gd_scene load_steps=17 format=3 uid="uid://vmtlftmndmcw"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_yb1o3"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_awmek"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://o5nyhstagafj" path="res://Spike.tscn" id="8_i11go"]
 [ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="9_2dnmb"]
 [ext_resource type="Texture2D" uid="uid://car5w53pb7aug" path="res://Background.png" id="10_64wrk"]
+[ext_resource type="AudioStream" uid="uid://k8f0dg5t6mwl" path="res://Bullet Price Rag.mp3" id="11_cq87w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ti4jd"]
 atlas = ExtResource("10_64wrk")
@@ -126,6 +127,9 @@ texture = ExtResource("6_qved6")
 [node name="Coin" parent="." instance=ExtResource("7_6re4o")]
 position = Vector2(944, 464)
 
+[node name="Coin2" parent="." instance=ExtResource("7_6re4o")]
+position = Vector2(624, 360)
+
 [node name="Verticalenemy4" parent="." instance=ExtResource("5_5g53x")]
 position = Vector2(1632, 1016)
 shoot = true
@@ -224,3 +228,7 @@ position = Vector2(1200, 824)
 position = Vector2(1168, 824)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_2dnmb")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_cq87w")
+autoplay = true

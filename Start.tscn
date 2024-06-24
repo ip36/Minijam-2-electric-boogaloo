@@ -105,3 +105,5 @@ offset_right = 821.0
 offset_bottom = 132.0
 theme = SubResource("Theme_lr35b")
 text = "due to increased"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

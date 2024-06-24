@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwagvr8m7ec3r"]
+[gd_scene load_steps=16 format=3 uid="uid://cwagvr8m7ec3r"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8se04"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_7j06e"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="7_e4kr0"]
 [ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="8_7rn1w"]
 [ext_resource type="Texture2D" uid="uid://car5w53pb7aug" path="res://Background.png" id="9_yl1rt"]
+[ext_resource type="AudioStream" uid="uid://k8f0dg5t6mwl" path="res://Bullet Price Rag.mp3" id="10_umheg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ti4jd"]
 atlas = ExtResource("9_yl1rt")
@@ -126,3 +127,7 @@ texture = ExtResource("6_cty7j")
 position = Vector2(1040, 528)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_7rn1w")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_umheg")
+autoplay = true

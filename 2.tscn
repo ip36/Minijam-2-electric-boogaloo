@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://mddlera5c71j"]
+[gd_scene load_steps=10 format=3 uid="uid://mddlera5c71j"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2sfyw"]
 [ext_resource type="Texture2D" uid="uid://chdp5kd27nva3" path="res://BG.png" id="2_m65aj"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="6_2ooau"]
 [ext_resource type="Texture2D" uid="uid://cdo722xvbtlhf" path="res://Gun.png" id="6_sqlht"]
 [ext_resource type="PackedScene" uid="uid://bykaax24j743y" path="res://UI.tscn" id="8_jvmtx"]
+[ext_resource type="AudioStream" uid="uid://k8f0dg5t6mwl" path="res://Bullet Price Rag.mp3" id="9_eyg8p"]
 
 [node name="2" type="Node"]
 script = ExtResource("1_2sfyw")
@@ -66,3 +67,7 @@ texture = ExtResource("6_sqlht")
 position = Vector2(1040, 528)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_jvmtx")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_eyg8p")
+autoplay = true
